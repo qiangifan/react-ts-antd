@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -13,7 +14,8 @@ module.exports = {
         extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
     plugins: [
-        new HtmlWebpackPlugin({template: "./app/template/index.html"})
+        new HtmlWebpackPlugin({template: "./app/template/index.html"}),
+        new webpack.SourceMapDevToolPlugin()
     ],
     module: {
         rules: [

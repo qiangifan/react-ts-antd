@@ -4,7 +4,7 @@
   "description": "webpack + react + antd",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --mode development",
+    "start": "webpack-dev-server --inline --progress --mode development --config webpack.config.js",
     "build": "webpack"
   },
   "author": "terry",
@@ -20,6 +20,7 @@
     "@types/react-router-dom": "^4.3.4",
     "antd": "^3.20.0",
     "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.19.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.0",
