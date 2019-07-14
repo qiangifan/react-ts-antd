@@ -4,7 +4,7 @@ import LoginView from '../src/views/login/loginView'
 export const routers = [
     {
         path: "/",
-        redirect: '/home'
+        redirect: '/login'
     }, {
         path: '/home',
         component: GlobalLayout,
