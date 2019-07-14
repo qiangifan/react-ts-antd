@@ -43,18 +43,5 @@ module.exports = {
                 use: ["style-loader", "css-loader"]
             }
         ]
-    },
-    devServer: {
-        port: 8080,
-        proxy: {
-            "/api": {
-                target: 'http://www.qishanshan.cn/test/v2.0.0/api/',
-                secure: false,
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/api/': ''
-                }
-            }
-        }
     }
 };

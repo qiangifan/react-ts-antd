@@ -1,16 +1,12 @@
 import * as React from 'react'
 import {Input, Button, Form} from 'antd';
 import {login} from '../../servers/api';
-import {FormComponentProps} from 'antd/lib/form';
+import {withRouter} from 'react-router';
+import {IFormProps} from './index'
 
-interface IFormProps extends FormComponentProps {
-    account : string,
-    password : string,
-    submitLogin : (value : any) => void
-}
 const LoginForm = Form.create()((props : IFormProps) => {
     const {getFieldDecorator} = props.form;
-    const submit = ()=>{
+    const submit = () => {
         props.submitLogin(props.form.getFieldsValue())
     }
     return (
@@ -28,11 +24,10 @@ const LoginForm = Form.create()((props : IFormProps) => {
     )
 });
 
-export default class LoginView extends React.Component < any,
-any > {
+export default withRouter(class LoginView extends React.Component < any, any > {
     private login = (params : any) => {
         login(params).then((res : any) => {
-            console.log(res)
+            res.code === 200 && (this.props.history.push('/home'))
         })
     }
 
@@ -49,4 +44,4 @@ any > {
             </div>
         )
     }
-}
+})
