@@ -1,6 +1,6 @@
-import GlobalLayout from '../src/globalLayout/index';
-import HomeView from '../src/views/home/homeView'
-import LoginView from '../src/views/login/loginView'
+import GlobalLayout from '../globalLayout/index';
+import HomeView from '../views/home/homeView'
+import LoginView from '../views/login/loginView'
 export const routers = [
     {
         path: "/",

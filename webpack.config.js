@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: {
-        app: path.join(__dirname, "./app", "src")
+        app: path.join(__dirname, "src")
     },
     output: {
         path: path.join(__dirname, "./", "dist"),
@@ -14,7 +14,7 @@ module.exports = {
         extensions: [".ts", ".tsx", ".js", ".jsx"]
     },
     plugins: [
-        new HtmlWebpackPlugin({template: "./app/template/index.html"}),
+        new HtmlWebpackPlugin({template: "./src/template/index.html"}),
         new webpack.SourceMapDevToolPlugin()
     ],
     module: {
@@ -28,16 +28,16 @@ module.exports = {
                     }
                 ]
             }, {
+                test: /.ts(x?)$/,
+                loader: "eslint-loader",
+                options: {
+                    
+                }
+            }, {
                 test: /\.less$/,
                 exclude: [/node_modules/],
-                include: [path.join(__dirname, './app', 'src')],
-                use: [
-                    require.resolve("style-loader"), {
-                        loader: require.resolve("css-loader")
-                    }, {
-                        loader: require.resolve("less-loader") // compiles Less to CSS
-                    }
-                ]
+                include: [path.join(__dirname, 'src')],
+                use: ["style-loader", "css-loader", "less-loader"]
             }, {
                 test: /\.css/,
                 use: ["style-loader", "css-loader"]

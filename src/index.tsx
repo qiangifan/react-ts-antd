@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-import RouterNav from '../routers/index';
-
+ 
+import RouterNav from './routers'
 import 'antd/dist/antd.css'
 
 

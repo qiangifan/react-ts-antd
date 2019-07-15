@@ -1,0 +1,26 @@
+{
+    "root": true,
+    "extends": [
+        "eslint:recommended", "plugin:react/recommended"
+    ],
+    "plugins": [
+        "react", "typescript"
+    ],
+    "parser": "typescript-eslint-parser",
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "no-console": [1, {"allow": ["log"] }],
+        "no-unused-vars":[1, {"vars": "local","args": "none" }],
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
+}

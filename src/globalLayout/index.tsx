@@ -2,7 +2,6 @@ import React from 'react';
 import {Layout} from 'antd'
 import SiderLayout from './SiderLayout';
 import HeaderLayout from './HeaderLayout';
-import RouterNav from '../../routers/index';
 
 import "./index.less"
 import {withRouter, Route} from 'react-router';
@@ -11,8 +10,6 @@ class GlobalLayout extends React.Component < any,
 any > {
 
     render() {
-        console.log(this.props);
-
         return (
             <Layout className="home">
                 <HeaderLayout/>

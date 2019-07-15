@@ -2,9 +2,8 @@ import * as React from 'react'
 import {Input, Button, Form} from 'antd';
 import {login} from '../../servers/api';
 import {withRouter} from 'react-router';
-import {IFormProps} from './index'
 
-const LoginForm = Form.create()((props : IFormProps) => {
+const LoginForm = Form.create()((props : any) => {
     const {getFieldDecorator} = props.form;
     const submit = () => {
         props.submitLogin(props.form.getFieldsValue())
