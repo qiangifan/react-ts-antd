@@ -1,6 +1,6 @@
 import React from 'react';
 import {HashRouter, Route, Redirect} from 'react-router-dom'
-
+import GlobalLayout from '../globalLayout'
 import {routers} from './router'
 
 interface RouteEntity {
