@@ -16,7 +16,7 @@ any > {
                 <HeaderLayout/>
                 <Layout>
                     <SiderLayout/>
-                    <Layout.Content className="content">
+                    <Layout.Content className="content-view">
                         <Route >
                             {this
                                 .props

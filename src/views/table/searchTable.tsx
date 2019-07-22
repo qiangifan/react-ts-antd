@@ -7,7 +7,7 @@ class SearchTable extends React.Component<any,any>{
         return (
             <div>
                 Search Table
-                <Table/>
+                <Table bordered/>
             </div>
         )
     }

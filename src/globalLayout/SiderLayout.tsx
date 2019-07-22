@@ -1,7 +1,19 @@
 import React from 'react';
 import {Layout, Menu} from 'antd'
 import {NavLink, withRouter} from 'react-router-dom';
-import { routers } from '../routers/router';
+
+const menuList = [
+    {
+        path: "/home",
+        title: "首页"
+    }, {
+        path: "/table/basetable",
+        title: "基础表格"
+    }, {
+        path: '/table/searchtable',
+        title: "查询表格"
+    }
+];
 
 class SiderLayout extends React.Component < any,
 any > {
@@ -9,17 +21,15 @@ any > {
         const {pathname} = this.props.location;
         const selectedKeys = [pathname];
         return (
-            <Layout.Sider className="sider">
+            <Layout.Sider className="sider-view">
                 <Menu selectedKeys={selectedKeys}>
-                    <Menu.Item key={`/home`}>
-                        <NavLink to={`/home`}>首页</NavLink>
-                    </Menu.Item>
-                    <Menu.Item key={`/table/basetable`}>
-                        <NavLink to={`/table/basetable`}>基础表格</NavLink>
-                    </Menu.Item>
-                    <Menu.Item key={`/table/searchtable`}>
-                        <NavLink to={`/table/searchtable`}>带探索的表格</NavLink>
-                    </Menu.Item>
+                    {menuList.map(item => {
+                        return (
+                            <Menu.Item key={`${item.path}`}>
+                                <NavLink to={`${item.path}`}>{item.title}</NavLink>
+                            </Menu.Item>
+                        )
+                    })}
                 </Menu>
             </Layout.Sider>
         )

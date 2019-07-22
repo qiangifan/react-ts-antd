@@ -6,7 +6,7 @@ class BaseTable extends React.Component<any,any>{
         return (
             <div>
                 base table
-                <Table/>
+                <Table bordered/>
             </div>
         )
     }

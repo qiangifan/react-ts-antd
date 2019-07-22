@@ -14,11 +14,7 @@ any > {
             <div>
                 home page
                 <div className="home-view">
-                    {
-                        divList.map((item,index)=>{
-                           return (<div key={index}>{`${item}   ${index}`}</div>)
-                        })
-                    }
+                    1
                 </div>
             </div>
         )
