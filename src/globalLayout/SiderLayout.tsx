@@ -1,19 +1,7 @@
 import React from 'react';
 import {Layout, Menu} from 'antd'
 import {NavLink, withRouter} from 'react-router-dom';
-
-const menuList = [
-    {
-        path: "/home",
-        title: "首页"
-    }, {
-        path: "/table/basetable",
-        title: "基础表格"
-    }, {
-        path: '/table/searchtable',
-        title: "查询表格"
-    }
-];
+import {menuList} from './config'
 
 class SiderLayout extends React.Component < any,
 any > {
@@ -22,13 +10,32 @@ any > {
         const selectedKeys = [pathname];
         return (
             <Layout.Sider className="sider-view">
-                <Menu selectedKeys={selectedKeys}>
-                    {menuList.map(item => {
-                        return (
-                            <Menu.Item key={`${item.path}`}>
-                                <NavLink to={`${item.path}`}>{item.title}</NavLink>
-                            </Menu.Item>
-                        )
+                <Menu selectedKeys={selectedKeys} mode="inline">
+                    {menuList.map((item : any) => {
+                        console.log(item, item.children && item.children.length > 0)
+                        if (item.children && item.children.length > 0) {
+                            return (
+                                <Menu.SubMenu title={item.title} key={`${item.path}`}>
+                                    {item
+                                        .children
+                                        .map((child : any) => {
+                                            return (
+                                                <Menu.Item key={`${child.path}`}>
+                                                    <NavLink to={`${child.path}`}>{child.title}</NavLink>
+                                                </Menu.Item>
+                                            )
+                                        })
+}
+                                </Menu.SubMenu>
+                            )
+                        } else {
+                            return (
+                                <Menu.Item key={`${item.path}`}>
+                                    <NavLink to={`${item.path}`}>{item.title}</NavLink>
+                                </Menu.Item>
+                            )
+                        }
+
                     })}
                 </Menu>
             </Layout.Sider>
