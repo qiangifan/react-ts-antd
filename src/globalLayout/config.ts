@@ -14,5 +14,14 @@ export const menuList = [
                 title: "查询表格"
             }
         ]
+    }, {
+        path: "/form",
+        title: "表单",
+        children: [
+            {
+                path: '/from/batchadd',
+                title: "批量新增"
+            } 
+        ]
     }
 ];

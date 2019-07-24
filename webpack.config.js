@@ -28,11 +28,11 @@ module.exports = {
                     }
                 ]
             }, {
-                test: /.ts(x?)$/,
-                loader: "eslint-loader",
-                options: {
+                // test: /.ts(x?)$/,
+                // loader: "eslint-loader",
+                // options: {
                     
-                }
+                // }
             }, {
                 test: /\.less$/,
                 exclude: [/node_modules/],

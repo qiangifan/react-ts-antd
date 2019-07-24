@@ -3,6 +3,8 @@ import HomeView from '../views/home/homeView';
 import LoginView from '../views/login/loginView';
 import BaseTable from '../views/table/baseTable';
 import SearchTable from '../views/table/searchTable';
+import BatchAddForm from '../views/from/batchAdd/batchAdd'
+
 export const routers = [
     {
         path: "/",
@@ -46,6 +48,21 @@ export const routers = [
             }
         ]
     }, {
+        path: '/from',
+        component: GlobalLayout,
+        meta: {
+            title: "表格"
+        },
+        routes: [
+            {
+                path: '/from/batchadd',
+                meta: {
+                    title: "批量新增" 
+                },
+                component: BatchAddForm
+            } 
+        ]
+    },{
         path: '/login',
         component: LoginView
     }

@@ -10,7 +10,6 @@ class GlobalLayout extends React.Component < any,
 any > {
 
     render() {
-        console.log(this.props)
         return (
             <Layout className="home">
                 <HeaderLayout/>

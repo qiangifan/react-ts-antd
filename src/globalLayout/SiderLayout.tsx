@@ -12,7 +12,6 @@ any > {
             <Layout.Sider className="sider-view">
                 <Menu selectedKeys={selectedKeys} mode="inline">
                     {menuList.map((item : any) => {
-                        console.log(item, item.children && item.children.length > 0)
                         if (item.children && item.children.length > 0) {
                             return (
                                 <Menu.SubMenu title={item.title} key={`${item.path}`}>

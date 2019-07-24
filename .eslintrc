@@ -14,7 +14,8 @@
     },
     "rules": {
         "no-console": [1, {"allow": ["log"] }],
-        "no-unused-vars":[1, {"vars": "local","args": "none" }],
+        "no-unused-vars":[1, {"vars": "local,*Props","args": "none" }],
+        "react/no-deprecated":[1]
     },
     "parserOptions": {
         "ecmaVersion": 6,
