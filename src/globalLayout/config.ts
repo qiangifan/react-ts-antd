@@ -23,5 +23,14 @@ export const menuList = [
                 title: "批量新增"
             } 
         ]
+    }, {
+        path: "/modal",
+        title: "弹窗",
+        children: [
+            {
+                path: '/modal/common',
+                title: "常用弹窗"
+            } 
+        ]
     }
 ];

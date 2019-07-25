@@ -1,9 +1,14 @@
 import GlobalLayout from '../globalLayout/index';
 import HomeView from '../views/home/homeView';
 import LoginView from '../views/login/loginView';
+// 表格
 import BaseTable from '../views/table/baseTable';
 import SearchTable from '../views/table/searchTable';
+// 表单
 import BatchAddForm from '../views/from/batchAdd/batchAdd'
+
+// 弹窗
+import CommonModal from '../views/modal/index';
 
 export const routers = [
     {
@@ -60,6 +65,21 @@ export const routers = [
                     title: "批量新增" 
                 },
                 component: BatchAddForm
+            } 
+        ]
+    }, {
+        path: '/modal',
+        component: GlobalLayout,
+        meta: {
+            title: "弹窗"
+        },
+        routes: [
+            {
+                path: '/modal/common',
+                meta: {
+                    title: "常用弹窗" 
+                },
+                component: CommonModal
             } 
         ]
     },{
