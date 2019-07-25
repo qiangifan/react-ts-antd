@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Button, Modal} from 'antd';
-import EditModalFrom from './component/editModalForm'
+import EditModalFrom from './component/customForm/customForm'
 
 export default class BatchAdd extends React.Component < any,
 any > {
