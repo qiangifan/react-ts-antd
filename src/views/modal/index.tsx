@@ -20,20 +20,27 @@ export class CommonModal extends React.Component {
             ...deleteBaseOpt
         });
     }
-
+     // 无提示图标
+     private showTipOfNotIcon = () => {
+        Modal.confirm({
+            ...deleteBaseOpt,
+            icon:null
+        });
+    }
     // 函数弹窗按钮带图标
     private showTipOfBtnIcon = () => {
         Modal.confirm({
             ...deleteBaseOpt,
             okButtonProps: {
-                icon: "check-circle"
+                icon: "check-circle",
+                type:"ghost"
             },
             cancelButtonProps: {
-                icon: "close-circle"
+                icon: "close-circle",
+                type:"ghost"
             }
         })
     }
-
     // 图片预览
     private previewImg = () => {
         let random = Math.random()*10;
@@ -54,6 +61,7 @@ export class CommonModal extends React.Component {
                 </div>
                 <div style={easyStyle}>
                     <Button onClick={this.showTipOfBase}>基础弹窗</Button>
+                    <Button onClick={this.showTipOfNotIcon}>无提示图标</Button>
                     <Button onClick={this.showTipOfBtnIcon}>按钮带图标</Button>
                     <Button onClick={this.previewImg}>图片预览</Button>
                 </div>
