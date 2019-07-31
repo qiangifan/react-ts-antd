@@ -9,6 +9,8 @@ import BatchAddForm from '../views/form/batchAdd/batchAdd'
 
 // 弹窗
 import CommonModal from '../views/modal/index';
+// 树型
+import NodeHandle from '../views/tree/nodeHandle/nodeHandle';
 
 export const routers = [
     {
@@ -82,8 +84,26 @@ export const routers = [
                 component: CommonModal
             } 
         ]
-    },{
+    },
+    {
+        path: '/tree',
+        component: GlobalLayout,
+        meta: {
+            title: "树型"
+        },
+        routes: [
+            {
+                path: '/tree/nodehandle',
+                meta: {
+                    title: "节点操作" 
+                },
+                component: NodeHandle
+            } 
+        ]
+    }
+    ,{
         path: '/login',
         component: LoginView
     }
+    
 ]

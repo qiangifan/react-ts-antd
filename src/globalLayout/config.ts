@@ -32,5 +32,14 @@ export const menuList = [
                 title: "常用弹窗"
             } 
         ]
+    }, {
+        path: "/tree",
+        title: "树型",
+        children: [
+            {
+                path: '/tree/nodehandle',
+                title: "节点操作"
+            } 
+        ]
     }
 ];
