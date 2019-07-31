@@ -5,7 +5,7 @@ import LoginView from '../views/login/loginView';
 import BaseTable from '../views/table/baseTable';
 import SearchTable from '../views/table/searchTable';
 // 表单
-import BatchAddForm from '../views/from/batchAdd/batchAdd'
+import BatchAddForm from '../views/form/batchAdd/batchAdd'
 
 // 弹窗
 import CommonModal from '../views/modal/index';
@@ -53,14 +53,14 @@ export const routers = [
             }
         ]
     }, {
-        path: '/from',
+        path: '/form',
         component: GlobalLayout,
         meta: {
             title: "表格"
         },
         routes: [
             {
-                path: '/from/batchadd',
+                path: '/form/batchadd',
                 meta: {
                     title: "批量新增" 
                 },

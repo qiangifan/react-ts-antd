@@ -19,7 +19,7 @@ export const menuList = [
         title: "表单",
         children: [
             {
-                path: '/from/batchadd',
+                path: '/form/batchadd',
                 title: "批量新增"
             } 
         ]

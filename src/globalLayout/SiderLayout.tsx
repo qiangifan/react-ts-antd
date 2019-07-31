@@ -7,10 +7,11 @@ class SiderLayout extends React.Component < any,
 any > {
     render() {
         const {pathname} = this.props.location;
-        const selectedKeys = [pathname];
+        const defaultSelectedKeys = [pathname];
+        const defaultOpenKeys = [pathname.substr(0,pathname.lastIndexOf("/"))];
         return (
             <Layout.Sider className="sider-view">
-                <Menu selectedKeys={selectedKeys} mode="inline">
+                <Menu defaultSelectedKeys={defaultSelectedKeys} defaultOpenKeys={defaultOpenKeys} mode="inline">
                     {menuList.map((item : any) => {
                         if (item.children && item.children.length > 0) {
                             return (
