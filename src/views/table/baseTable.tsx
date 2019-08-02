@@ -1,7 +1,13 @@
 import * as React from 'react';
 import { Table } from 'antd';
+import { connect } from 'react-redux';
 
 class BaseTable extends React.Component<any,any>{
+
+    componentDidMount(){
+        console.log(this.props)
+    }
+
     render(){
         return (
             <div>
@@ -12,4 +18,4 @@ class BaseTable extends React.Component<any,any>{
     }
 }
 
-export default BaseTable;
+export default connect()(BaseTable);
