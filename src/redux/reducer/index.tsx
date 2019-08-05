@@ -1,4 +1,8 @@
-export default (state:any,action:any) =>{
-    const {counterCaption} = action;
-    return state
-}
+import {combineReducers} from 'redux'
+import * as modalReducer from './modalReducer'
+console.log(modalReducer)
+const reducer = combineReducers({
+    ...modalReducer
+});
+
+export default reducer;

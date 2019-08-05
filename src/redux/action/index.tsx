@@ -1,3 +1,1 @@
-export default ((state:any,action:any)=>{
-    
-})
+export * from './modalAction'
