@@ -21,7 +21,10 @@ export const menuList = [
             {
                 path: '/form/batchadd',
                 title: "批量新增"
-            } 
+            }, {
+                path: '/form/itemgroup',
+                title: "表单项分组"
+            }
         ]
     }, {
         path: "/modal",
@@ -30,7 +33,7 @@ export const menuList = [
             {
                 path: '/modal/common',
                 title: "常用弹窗"
-            } 
+            }
         ]
     }, {
         path: "/tree",
@@ -39,7 +42,7 @@ export const menuList = [
             {
                 path: '/tree/nodehandle',
                 title: "节点操作"
-            } 
+            }
         ]
     }
 ];

@@ -5,7 +5,8 @@ import LoginView from '../views/login/loginView';
 import BaseTable from '../views/table/baseTable';
 import SearchTable from '../views/table/searchTable';
 // 表单
-import BatchAddForm from '../views/form/batchAdd/batchAdd'
+import BatchAddForm from '../views/form/batchAdd/batchAdd';
+import ItemGroup from '../views/form/itemGroup/itemGroup';
 
 // 弹窗
 import CommonModal from '../views/modal/index';
@@ -58,16 +59,22 @@ export const routers = [
         path: '/form',
         component: GlobalLayout,
         meta: {
-            title: "表格"
+            title: "表单"
         },
         routes: [
             {
                 path: '/form/batchadd',
                 meta: {
-                    title: "批量新增" 
+                    title: "批量新增"
                 },
                 component: BatchAddForm
-            } 
+            }, {
+                path: '/form/itemgroup',
+                meta: {
+                    title: "表单项分组"
+                },
+                component: ItemGroup
+            }
         ]
     }, {
         path: '/modal',
@@ -79,13 +86,12 @@ export const routers = [
             {
                 path: '/modal/common',
                 meta: {
-                    title: "常用弹窗" 
+                    title: "常用弹窗"
                 },
                 component: CommonModal
-            } 
+            }
         ]
-    },
-    {
+    }, {
         path: '/tree',
         component: GlobalLayout,
         meta: {
@@ -95,15 +101,14 @@ export const routers = [
             {
                 path: '/tree/nodehandle',
                 meta: {
-                    title: "节点操作" 
+                    title: "节点操作"
                 },
                 component: NodeHandle
-            } 
+            }
         ]
-    }
-    ,{
+    }, {
         path: '/login',
         component: LoginView
     }
-    
+
 ]
