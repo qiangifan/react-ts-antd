@@ -3,19 +3,21 @@ import {Form, Button} from 'antd';
 import {FormComponentProps} from 'antd/lib/form';
 import FormItem from './itemComps'
 
-interface IFormTempProps extends FormComponentProps{
-    onSuccess:()=>void;
+interface IFormTempProps extends FormComponentProps {
+    onSuccess : () => void;
 }
 
 class VideoFormTemp extends React.Component < IFormTempProps > {
 
-    private submitForm(){
+    private submitForm() {
         const {validateFields} = this.props.form;
 
-        validateFields((errors: any, values: any)=>{
-            console.log(errors,values);
-            if(!errors){
-                this.props.onSuccess();
+        validateFields((errors : any, values : any) => {
+            console.log(errors, values);
+            if (!errors) {
+                this
+                    .props
+                    .onSuccess();
             }
         })
     }
@@ -23,7 +25,7 @@ class VideoFormTemp extends React.Component < IFormTempProps > {
     render() {
         let {getFieldDecorator} = this.props.form;
         return (
-            <Form>
+            <Form onSubmit={this.submitForm.bind(this)}>
                 <Form.Item label="标题">
                     {getFieldDecorator("title", {
                         initialValue: "1",
@@ -49,8 +51,19 @@ class VideoFormTemp extends React.Component < IFormTempProps > {
                         ]
                     })(<FormItem.CoverItem/>)}
                 </Form.Item>
+                <Form.Item label="金额">
+                    {getFieldDecorator("fee", {
+                        getValueFromEvent: value => value,
+                        rules: [
+                            {
+                                required: true,
+                                type:"number",
+                            }
+                        ]
+                    })(<FormItem.PriceItem/>)}
+                </Form.Item>
                 <Form.Item>
-                    <Button onClick={this.submitForm.bind(this)}>提交</Button>
+                    <Button htmlType="submit">提交</Button>
                 </Form.Item>
             </Form>
         )

@@ -5,14 +5,17 @@ import {
     Upload,
     Modal,
     Icon,
-    Button
+    Button,
+    InputNumber
 } from 'antd';
 import {getBase64} from '../../../../lib';
 
 import './component.less'
 
 // 分类下拉组件
-export class ClassItem extends React.Component < any,
+export class ClassItem extends React.Component < {
+    calssType?: string
+},
 any > {
     render() {
         return (
@@ -26,12 +29,12 @@ export class TitleItem extends React.Component < any,
 any > {
 
     state = {
-        title: this.props.value
+        title: this.props.value || ""
     }
 
-    private onchangeItem = (event : any) => {
+    private onchangeItem(event : any) {
         this.setState({
-            title: event.target.value
+            price: event.target.value
         }, this.props.onChange(event.target.value))
     }
 
@@ -45,7 +48,7 @@ export class CoverItem extends React.Component < any,
 any > {
 
     state = {
-        imgUrl: this.props.value
+        imgUrl: this.props.value || ""
     }
 
     // 图片预览
@@ -62,8 +65,8 @@ any > {
         }, this.props.onChange(""))
     }
 
-    // 图片转换base64展示,并将图片文件返回
-    private onchangeItem = async({file} : any) => {
+    // 图片转换base64展示,并将图片文件向上传递
+    private async onchangeItem({file} : any) {
         if (!file.url && !file.preview) {
             file.preview = await getBase64(file.originFileObj);
         }
@@ -91,7 +94,11 @@ any > {
                             <img className="cover-img" src={imgUrl} alt=""/>
                             <Icon type="eye" onClick={(event) => this.previewImg(event, imgUrl)}/>
                             &nbsp;&nbsp;
-                            <Icon type="delete" onClick={this.removeCover.bind(this)}/>
+                            <Icon
+                                type="delete"
+                                onClick={this
+                                .removeCover
+                                .bind(this)}/>
                         </React.Fragment>
                     )
                     : (
@@ -105,8 +112,34 @@ any > {
     }
 }
 
+// 金额
+export class PriceItem extends React.Component < any,
+any > {
+    state = {
+        price: this.props.value || 0
+    }
+
+    // 变更内容，将改变值向上传递
+    private onchangeItem(value : number | undefined) {
+        this.setState({
+            price: value
+        }, this.props.onChange(value))
+    }
+
+    render() {
+        return (<InputNumber
+            min={0}
+            maxLength={5}
+            value={this.state.price}
+            onChange={this
+            .onchangeItem
+            .bind(this)}/>)
+    }
+}
+
 export default {
     ClassItem,
     TitleItem,
-    CoverItem
+    CoverItem,
+    PriceItem
 }
