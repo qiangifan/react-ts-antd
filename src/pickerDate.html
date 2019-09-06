@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>picker date</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <select id="years"></select>年
+            <select id="months"></select>月
+            <select id="days"></select>日
+        </div>
+        <div>
+            <ul id="weekTitle"></ul>
+            <ul id="monthDays"></ul>
+        </div>
+    </div>
+</body>
+<script>
+    function pickerDate() {
+        let baseOpt = {
+            yearOpts: function () {
+                const startYear = 2000;
+                let yearsEl = document.querySelector('#years'), index = 0, len = 20;
+                for (; index <= len; index++) {
+                    let option = document.createElement('option');
+                    option.innerHTML = option.value = index + startYear;
+                    yearsEl.append(option);
+                }
+            },
+            weekOpts: function () {
+                let monthsEl = document.querySelector('#months'), index = 1, len = 12;
+                for (; index <= len; index++) {
+                    let option = document.createElement('option');
+                    option.innerHTML = option.value = index;
+                    monthsEl.append(option);
+                }
+            },
+            dayOpts:function(days){
+                let daysEl = document.querySelector('#days');
+                for (let day of days) {
+                    let option = document.createElement('option');
+                    option.innerHTML = option.value = day;
+                    daysEl.append(option);
+                }
+            }
+        };
+
+        function init() {
+            baseOpt.yearOpts();
+            baseOpt.weekOpts();
+            baseOpt.dayOpts([1,2,3,4,5,6,7,8,9,10]);
+        }
+
+        init();
+    }
+
+    pickerDate();
+
+</script>
+
+</html>
